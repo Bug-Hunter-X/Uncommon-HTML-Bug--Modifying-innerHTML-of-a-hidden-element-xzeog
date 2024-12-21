@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+  <script>
+    let myDiv = document.getElementById("myDiv");
+    myDiv.style.display = "none";
+    // Solution: Use a temporary variable to store the new content before modifying the innerHTML
+    let newContent = "This text should be visible after the change.";
+    myDiv.innerHTML = newContent; // Modify innerHTML while hidden to avoid rendering issues
+    myDiv.style.display = "block";
+  </script>
+</body>
+</html>
