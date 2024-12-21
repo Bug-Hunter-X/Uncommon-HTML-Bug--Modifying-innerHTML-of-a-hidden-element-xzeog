@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+  <script>
+    document.getElementById("myDiv").style.display = "none";
+    // The bug is that the following line attempts to modify the content of a hidden element,
+    // which is often ineffective in some browsers.
+    document.getElementById("myDiv").innerHTML = "This text should not be visible.";
+    document.getElementById("myDiv").style.display = "block";
+  </script>
+</body>
+</html>
